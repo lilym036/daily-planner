@@ -1,8 +1,27 @@
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
+  var saveBtn = $(".saveBtn");
+  // console.log(saveBtn);
+
+  function saveInfo(event) {
+    event.preventDefault();
+    var savedTime= $('.hour').parent();
+   
+  }
+  
+  
+  saveBtn.on("click", saveInfo);
+  
+  // saveBtn.on("click", function () {
+  // $('.hour').parent();
+
+  // });
+
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
@@ -20,4 +39,17 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
 });
+
+$("#currentDay").text(dayjs().format("dddd, MMM D, YYYY"));
+
+// console.log($('#hour-9').children());
+
+// console.log($('.hour').parent());
+
+// localStorage.setItem("key", value);
+
+// let variable= localStorage.getItem(key);
+
+// localStorage.removeItem(key);
