@@ -2,9 +2,11 @@
 var status = $(".time-block");
 var userInput = $(".description");
 var saveBtn = $(".saveBtn");
+// This sets the day and date on the header
 $("#currentDay").text(dayjs().format("dddd, MMM D, YYYY"));
 
 $(function () {
+  // This starts an event delegation... when save button is clicked something happens
  $(".saveBtn").on("click", function () {
   var savedTime = $(this).parent().attr("id");
   var textValue = $(this).siblings(".description").val();
@@ -15,7 +17,7 @@ $(function () {
   // var retrieveText= JSON.parse(localStorage.getItem(savedTime));
   
 })
-
+// This function handles the time blocks and changes the colors according to the time
 function changeColor() {
   var currentTime = dayjs().hour();
   console.log(currentTime);
@@ -38,7 +40,7 @@ function changeColor() {
     }
   });
 }
-
+// this retrieves items from local storage if any
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 $("#hour-10 .description").val(localStorage.getItem("hour-10"));
 $("#hour-11 .description").val(localStorage.getItem("hour-11"));

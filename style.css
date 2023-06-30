@@ -29,22 +29,22 @@ textarea {
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/* styling for past block */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-
+/* styling for present block */
 .present {
   background-color: #ff6961;
   color: white;
 }
-
+/* styling for future block */
 .future {
   background-color: #77dd77;
   color: white;
 }
-
+/* styling for save button */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
