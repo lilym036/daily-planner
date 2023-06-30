@@ -12,7 +12,7 @@ Open index.html file in the browser. There are three colors represeting the time
 
 ![alt text](./assets/screenshot.png);
 
-
+https://lilym036.github.io/daily-planner/
 
 ## Credits
 Sean Brown-Byfield- Tutor; Fred Kamm- TA
