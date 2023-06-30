@@ -7,18 +7,15 @@ This project was created to help employees keep track of important daily events 
 N/A
 
 ## Usage
-Open index.html file in the browser. 
+Open index.html file in the browser. There are three colors represeting the time. The block that is greyed out indicates a past time, a green block represents a future time, and a red block represents the current time. Input text into a block/section and save to store your information into the chosen time. 
 
-Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![alt text](./assets/screenshot.png);
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
 
 ## Credits
-
+Sean Brown-Byfield- Tutor; Fred Kamm- TA
 
 ## License
 MIT License
