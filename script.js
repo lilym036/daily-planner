@@ -1,31 +1,51 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var status= $(".time-block");
-var userInput= $(".description");
+var status = $(".time-block");
+var userInput = $(".description");
 var saveBtn = $(".saveBtn");
 $("#currentDay").text(dayjs().format("dddd, MMM D, YYYY"));
 
-$(function () {
-  function saveInfo() {
-    var retrieveText= JSON.parse(localStorage.getItem(savedTime));
-    console.log(retrieveText);
-    userInput.textContent= retrieveText;
+// $(function () {
+function saveInfo() {
+  var retrieveText = JSON.parse(localStorage.getItem(savedTime));
+  console.log(retrieveText);
+  userInput.textContent = retrieveText;
 
-    var savedTime= $(this).parent().attr("data-number");
-    var textValue= $(this).siblings(".description").val();
-    console.log(textValue);
+  var savedTime = $(this).parent().attr("data-number");
+  var textValue = $(this).siblings(".description").val();
+  console.log(textValue);
 
   localStorage.setItem(savedTime, JSON.stringify(textValue));
 
-  }
+  changeColor();
 
-  saveBtn.on("click", saveInfo);
-  
+}
+
+function changeColor() {
+  var currentTime = dayjs().hour();
+  console.log(currentTime);
+
+  $(".time-block").each(function () {
+    var compareTime = parseInt($(this).attr("id").split("-")[1]);
+
+    if (compareTime < currentTime) {
+      $(this).addClass("past");
+    } else if (compareTime === currentTime) {
+      $(this).removeClass("past");
+      $(this).addClass("present");
+    } else {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+    }
+  });
+}
+
+saveBtn.on("click", saveInfo);
 
 
 
-// localStorage.removeItem(key);
 
 // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -42,4 +62,4 @@ $(function () {
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+  // attribute of each time-block be used to do this
